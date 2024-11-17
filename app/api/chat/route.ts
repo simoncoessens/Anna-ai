@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
     try {
         // Make a POST request to your Koyeb backend
-        const res = await fetch('christian-shina-anna-ai-5bf87881.koyeb.app/process', {
+        const res = await fetch('https://christian-shina-anna-ai-5bf87881.koyeb.app/process', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
