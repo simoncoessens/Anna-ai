@@ -1,4 +1,8 @@
-export default function WorkButton({ clickHandler }) {
+type WorkButtonProps = {
+  clickHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
+};
+
+export default function WorkButton({ clickHandler }: WorkButtonProps) {
   return (
     <button
       onClick={clickHandler} // Adding the click handler

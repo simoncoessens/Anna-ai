@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { AuroraBackground } from "/components/core/aurora-background"; // Make sure the path to AuroraBackground is correct
+import { AuroraBackground } from "@/components/core/aurora-background"; // Make sure the path to AuroraBackground is correct
 
 export default function Page() {
   return (
