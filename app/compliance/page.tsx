@@ -56,8 +56,8 @@ export default function PDFViewerWithChat() {
             <div className="max-w-xl w-full h-full overflow-y-scroll border rounded-lg p-4 shadow-lg">
               {/* Display PDF using iframe */}
               <iframe
-                src="/pdf/report.pdf" // Replace with the actual path to your PDF file
-                title="PDF Viewer"
+                src="http://aboard-bus-91f.notion.site" // Replace with your actual Notion page URL
+                title="Notion Viewer"
                 width="100%"
                 height="100%"
                 style={{ border: "none" }}
@@ -68,7 +68,7 @@ export default function PDFViewerWithChat() {
           {/* Right Side - Chatbot Section */}
           <div className="flex-1 flex flex-col items-center justify-center p-8 z-10">
             <form
-              className="w-[800px] h-[900px] rounded-3xl border border-gray-200 flex flex-col bg-white bg-opacity-100 overflow-clip shadow-md p-4"
+              className="w-[500px] h-[600px] rounded-3xl border border-gray-200 flex flex-col bg-white bg-opacity-100 overflow-clip shadow-md p-4"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleClick();

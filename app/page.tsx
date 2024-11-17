@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { TextEffect } from "@/components/core/text-effect"; // Make sure this path is correct
-import WorkButton from "@/components/core/WorkButton"; // Importing the WorkButton component
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/core/aurora-background"; // Make sure this path is correct
 

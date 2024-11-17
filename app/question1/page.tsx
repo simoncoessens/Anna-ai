@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation"; // Importing useRouter
 import { Message } from "@/types/message";
 import { Send } from "react-feather";
 import LoadingDots from "@/components/LoadingDots";
-import { AuroraBackground } from "@/components/core/aurora-background"; // Import the AuroraBackground
-import { BackgroundGradient } from "@/components/core/background-gradient"; // Import the BackgroundGradient
-import ReactMarkdown from "react-markdown"; // Import react-markdown
+import { AuroraBackground } from "@/components/core/aurora-background";
+import { BackgroundGradient } from "@/components/core/background-gradient";
+import ReactMarkdown from "react-markdown";
 
 export default function Question1() {
+  const router = useRouter(); // Initialize useRouter for navigation
   const [message, setMessage] = useState<string>("");
   const [history, setHistory] = useState<Message[]>([
     {
@@ -51,9 +53,21 @@ export default function Question1() {
     }
   }, [history]);
 
+  const handleButtonClick = () => {
+    router.push("/risk-asses");
+  };
+
   return (
     <div className="relative h-screen">
       <AuroraBackground className="absolute inset-0 -z-100">
+        {/* Top-right "Get Started" Button */}
+        <button
+          onClick={handleButtonClick}
+          className="absolute top-4 right-4 bg-black dark:bg-white rounded-full text-white dark:text-black px-4 py-2 z-50"
+        >
+          Continue
+        </button>
+
         <div className="flex h-full">
           {/* Left Side - Text Section */}
           <div className="flex-1 flex flex-col justify-center items-center p-8">

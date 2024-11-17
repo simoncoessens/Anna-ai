@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation"; // Importing useRouter
 import { Message } from "@/types/message";
 import { Send } from "react-feather";
 import LoadingDots from "@/components/LoadingDots";
-import { AuroraBackground } from "@/components/core/aurora-background"; // Import the AuroraBackground
-import Image from "next/image"; // Import Next.js Image component
+import { AuroraBackground } from "@/components/core/aurora-background";
+import Image from "next/image";
 
 export default function AssessRisk() {
+  const router = useRouter(); // Initialize useRouter for navigation
   const [message, setMessage] = useState<string>("");
   const [history, setHistory] = useState<Message[]>([
     {
@@ -48,9 +50,20 @@ export default function AssessRisk() {
     }
   }, [history]);
 
+  const handleButtonClick = () => {
+    router.push("/compliance"); // Update the target page as needed
+  };
+
   return (
     <div className="relative h-screen">
-      <AuroraBackground className="absolute inset-0 -z-10">
+      <AuroraBackground className="absolute inset-0 -z-100">
+        <button
+          onClick={handleButtonClick}
+          className="absolute top-4 right-4 bg-black dark:bg-white rounded-full text-white dark:text-black px-4 py-2 z-50"
+        >
+          Continue
+        </button>
+
         <div className="flex h-full">
           {/* Left Side - Risk Assessment Section */}
           <div className="flex-1 flex flex-col justify-center items-center p-8">
@@ -62,7 +75,7 @@ export default function AssessRisk() {
                 special attention to safety, security, and compliance standards.
               </p>
               <Image
-                src="/images/pyramyd.png" // Make sure the image exists in the public/images folder
+                src="/images/pyramyd.png" // Ensure the image exists in the public/images folder
                 alt="High Risk"
                 width={500}
                 height={500}
