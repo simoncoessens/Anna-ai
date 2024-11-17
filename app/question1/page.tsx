@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Message } from "@/types/message";
 import { Send } from "react-feather";
 import LoadingDots from "@/components/LoadingDots";
 import { AuroraBackground } from "@/components/core/aurora-background"; // Import the AuroraBackground
 import { BackgroundGradient } from "@/components/core/background-gradient"; // Import the BackgroundGradient
+import ReactMarkdown from "react-markdown"; // Import react-markdown
 
 export default function Question1() {
   const [message, setMessage] = useState<string>("");
@@ -52,7 +53,7 @@ export default function Question1() {
 
   return (
     <div className="relative h-screen">
-      <AuroraBackground className="absolute inset-0 -z-10">
+      <AuroraBackground className="absolute inset-0 -z-100">
         <div className="flex h-full">
           {/* Left Side - Text Section */}
           <div className="flex-1 flex flex-col justify-center items-center p-8">
@@ -79,17 +80,15 @@ export default function Question1() {
           </div>
 
           {/* Right Side - Chatbot Section */}
-          <div className="flex-1 flex flex-col items-center justify-center p-8">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 z-10">
             <form
-              className="w-[800px] h-[900px] rounded-3xl border border-gray-200  flex flex-col bg-white overflow-clip shadow-md p-4"
+              className="w-[800px] h-[900px] rounded-3xl border border-gray-200 flex flex-col bg-white bg-opacity-100 overflow-clip shadow-md p-4"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleClick();
               }}
             >
               <div className="overflow-y-scroll flex flex-col gap-5 h-full">
-                {" "}
-                {/* <div className="overflow-y-scroll flex flex-col gap-5 h-full"> */}
                 {history.map((message, idx) => {
                   const isLastMessage = idx === history.length - 1;
                   return (
@@ -117,9 +116,9 @@ export default function Question1() {
                         <p className="text-lg font-medium text-gray-700 mb-2">
                           {message.role === "user" ? "You" : "Anna"}
                         </p>
-                        <p className="text-lg font-medium text-gray-700 mb-2">
-                          {message.content}
-                        </p>
+                        <div className="text-lg font-medium text-gray-700 mb-2">
+                          <ReactMarkdown>{message.content}</ReactMarkdown>
+                        </div>
                       </div>
                     </div>
                   );

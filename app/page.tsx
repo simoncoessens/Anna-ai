@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   return (
-    <AuroraBackground>
+    <AuroraBackground className="absolute inset-0 -z-10">
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

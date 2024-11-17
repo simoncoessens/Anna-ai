@@ -72,15 +72,15 @@ export default function AssessRisk() {
           </div>
 
           {/* Right Side - Chatbot Section */}
-          <div className="flex-1 flex flex-col items-center justify-center p-8">
+          <div className="flex-1 flex flex-col items-center justify-center p-8 z-10">
             <form
-              className="w-[800px] h-[900px] rounded-3xl border border-gray-200 flex flex-col bg-white overflow-clip shadow-md p-4"
+              className="w-[800px] h-[900px] rounded-3xl border border-gray-200 flex flex-col bg-white bg-opacity-100 overflow-clip shadow-md p-4"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleClick();
               }}
             >
-              <div className="flex flex-col gap-5 h-full">
+              <div className="overflow-y-scroll flex flex-col gap-5 h-full">
                 {history.map((message, idx) => {
                   const isLastMessage = idx === history.length - 1;
                   return (
@@ -105,7 +105,7 @@ export default function AssessRisk() {
                             : "rounded-tr-xl rounded-bl-none"
                         }`}
                       >
-                        <p className="text-sm font-medium text-gray-700 mb-2">
+                        <p className="text-lg font-medium text-gray-700 mb-2">
                           {message.role === "user" ? "You" : "Anna"}
                         </p>
                         <p className="text-lg font-medium text-gray-700 mb-2">
