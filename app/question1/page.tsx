@@ -80,9 +80,9 @@ export default function Question1() {
                 Defining what constitutes an AI system can sometimes be tricky.
                 The European Union has opted to align with an international
                 definition, aiming to distinguish AI systems from traditional
-                software (such as a system that calculates your BMI). The EU AI
-                Act focuses on two primary targets: AI systems and General
-                Purpose AI (GPAI) models.
+                software (such as a system that calculates your BMI). According
+                to the EU AI Act an AI system has the following
+                charachteristics.
               </p>
               <ul className="list-disc list-inside text-2xl text-gray-700 mb-4">
                 <li>Autonomy</li>

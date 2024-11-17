@@ -70,9 +70,9 @@ export default function AssessRisk() {
             <div className="max-w-xl w-full text-center">
               <h2 className="text-2xl font-bold mb-4">Risk Assessment</h2>
               <p className="text-2xl text-gray-700 mb-4">
-                The application has been identified as{" "}
-                <strong>Unacceptable</strong>. This level of risk requires
-                special attention to safety, security, and compliance standards.
+                Your AI system has been identified as <strong>high-risk</strong>
+                . This means that you need to comply with some legal
+                requirements both before and after its deployment
               </p>
               <Image
                 src="/images/pyramyd.png" // Ensure the image exists in the public/images folder
