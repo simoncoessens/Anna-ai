@@ -51,22 +51,27 @@ export default function PDFViewerWithChat() {
     <div className="relative h-screen">
       <AuroraBackground>
         <div className="flex h-full">
-          {/* Left Side - PDF Viewer Section */}
-          <div className="flex-1 flex flex-col justify-center items-center p-8 overflow-auto">
-            <div className="max-w-xl w-full h-full overflow-y-scroll border rounded-lg p-4 shadow-lg">
+          {/* Left Side - PDF Viewer Section (2/3 of the page) */}
+          <div className="flex-[2] flex flex-col justify-center items-center p-8 overflow-auto z-50">
+            <div
+              className="w-full h-auto overflow-y-scroll border rounded-lg p-6 shadow-lg"
+              style={{ maxWidth: "2000px" }} // Adjust as needed
+            >
               {/* Display PDF using iframe */}
               <iframe
-                src="http://aboard-bus-91f.notion.site" // Replace with your actual Notion page URL
-                title="Notion Viewer"
-                width="100%"
-                height="100%"
-                style={{ border: "none" }}
+                src="https://v2-embednotion.com/141d3f5793cd805194a1dbba929831ee"
+                style={{
+                  width: "1000px",
+                  height: "1000px", // Adjust as needed
+                  border: "2px solid #ccc",
+                  borderRadius: "10px",
+                }}
               ></iframe>
             </div>
           </div>
 
-          {/* Right Side - Chatbot Section */}
-          <div className="flex-1 flex flex-col items-center justify-center p-8 z-10">
+          {/* Right Side - Chatbot Section (1/3 of the page) */}
+          <div className="flex-[1] flex flex-col items-center justify-center p-8 z-10">
             <form
               className="w-[500px] h-[600px] rounded-3xl border border-gray-200 flex flex-col bg-white bg-opacity-100 overflow-clip shadow-md p-4"
               onSubmit={(e) => {
