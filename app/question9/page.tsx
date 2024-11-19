@@ -149,8 +149,7 @@ export default function Question1() {
                           {message.role === "user" ? "You" : "Anna"}
                         </p>
                         <div className="text-lg font-medium text-gray-700 mb-2">
-                          {/*<ReactMarkdown>{message.content}</ReactMarkdown>*/}
-                          {message.content}
+                          <ReactMarkdown>{message.content}</ReactMarkdown>
                         </div>
                       </div>
                     </div>
