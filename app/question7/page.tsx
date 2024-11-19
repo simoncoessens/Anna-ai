@@ -7,7 +7,7 @@ import { Send } from "react-feather";
 import LoadingDots from "@/components/LoadingDots";
 import { AuroraBackground } from "@/components/core/aurora-background";
 import { BackgroundGradient } from "@/components/core/background-gradient";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 
 export default function Question1() {
   const router = useRouter(); // Initialize useRouter for navigation
@@ -150,8 +150,10 @@ export default function Question1() {
                         <p className="text-lg font-medium text-gray-700 mb-2">
                           {message.role === "user" ? "You" : "Anna"}
                         </p>
-                        <div className="text-lg font-medium text-gray-700 mb-2">
-                          <ReactMarkdown>{message.content}</ReactMarkdown>
+                        <div className="prose">
+                          <section>
+                            <Markdown>{message.content}</Markdown>
+                          </section>
                         </div>
                       </div>
                     </div>

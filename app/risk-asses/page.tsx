@@ -7,6 +7,7 @@ import { Send } from "react-feather";
 import LoadingDots from "@/components/LoadingDots";
 import { AuroraBackground } from "@/components/core/aurora-background";
 import Image from "next/image";
+import Markdown from "react-markdown";
 
 export default function AssessRisk() {
   const router = useRouter(); // Initialize useRouter for navigation
@@ -120,9 +121,11 @@ export default function AssessRisk() {
                         <p className="text-lg font-medium text-gray-700 mb-2">
                           {message.role === "user" ? "You" : "Anna"}
                         </p>
-                        <p className="text-lg font-medium text-gray-700 mb-2">
-                          {message.content}
-                        </p>
+                        <div className="prose">
+                          <section>
+                            <Markdown>{message.content}</Markdown>
+                          </section>
+                        </div>
                       </div>
                     </div>
                   );
