@@ -46,7 +46,7 @@ export default function Question1() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         user_token: localStorage.getItem("user_token"),
-        question_id: 2,
+        question_id: 3,
         prompt: message,
       }),
     })
@@ -69,7 +69,7 @@ export default function Question1() {
   }, [history]);
 
   const handleButtonClick = () => {
-    router.push("/question3");
+    router.push("/question4");
   };
 
   return (
@@ -88,23 +88,23 @@ export default function Question1() {
           <div className="flex-1 flex flex-col justify-center items-center p-8">
             <div className="max-w-xl w-full">
               <h2 className="text-4xl font-bold mb-4">
-                Are you under the geographical scope of the AIA?
+                What is your role in the value chain of this AI system?
               </h2>
               <p className="text-2xl text-gray-700 mb-4">
-                Please provide more information to ANNA about where you are
-                located and where your activities are based. Your answers will
-                help determine whether your activities fall within the
-                geographical scope of the AI Act, even if you're not physically
-                established in the EU.
+                The AI Act outlines distinct responsibilities for different
+                actors. For example, if you are developing the AI system, you
+                may be classified as a provider and will need to adhere to the
+                related requirements and obligations. To help ANNA better
+                understand your role within the AI system's value chain, please
+                describe what you do in relation to the AI system. Are you
+                involved in developing, deploying, or overseeing its operation?
                 <br />
                 <br />
-                This will ensure proper guidance on the obligations you may
-                have. For example, you may be excluded if your AI system is used
-                exclusively for military purposes, or if it is deployed by a
-                third-country public authority for international cooperation
-                with the Union. Alternatively, if the AI system is part of
-                research and development activities not yet placed on the
-                market, you may also be exempt from the regulation.
+                Based on your description, ANNA can help determine whether you
+                are classified as a provider, deployer, or another relevant
+                actor under the AI Act and what obligations you might have. This
+                understanding is crucial for ensuring compliance with the AI
+                Act's requirements.
               </p>
             </div>
           </div>

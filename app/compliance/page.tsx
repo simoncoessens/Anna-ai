@@ -11,8 +11,7 @@ export default function PDFViewerWithChat() {
   const [history, setHistory] = useState<Message[]>([
     {
       role: "assistant",
-      content:
-        "👋 Hello! I'm Anna, your AI assistant here to help you. Let us start talking about the system you are developing. Can you give me some details?",
+      content: "👋 Hello! I'm Anna, your AI assistant here to help you.",
     },
   ]);
   const lastMessageRef = useRef<HTMLDivElement | null>(null);

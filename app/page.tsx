@@ -8,8 +8,27 @@ import { AuroraBackground } from "@/components/core/aurora-background"; // Make 
 export default function Home() {
   const router = useRouter();
 
+  // Function to generate or retrieve a unique user token
+  const generateUserToken = () => {
+    let userToken = localStorage.getItem("user_token");
+    if (!userToken) {
+      // Generate a unique token (e.g., using a timestamp and a random string)
+      userToken =
+        "user-" +
+        Date.now() +
+        "-" +
+        Math.random().toString(36).substring(2, 15);
+      localStorage.setItem("user_token", userToken);
+    }
+    return userToken;
+  };
+
   const handleButtonClick = () => {
-    router.push("/question1"); // Your desired navigation or logic
+    // Generate or retrieve the user token
+    generateUserToken();
+
+    // Navigate to the next page
+    router.push("/question1");
   };
 
   return (

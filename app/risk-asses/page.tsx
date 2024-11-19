@@ -14,8 +14,7 @@ export default function AssessRisk() {
   const [history, setHistory] = useState<Message[]>([
     {
       role: "assistant",
-      content:
-        "👋 Hello! I'm Anna, your AI assistant here to help you. Let us assess the risk level of your application. Please share more details.",
+      content: "👋 Hello! I'm Anna, your AI assistant here to help you.",
     },
   ]);
   const lastMessageRef = useRef<HTMLDivElement | null>(null);

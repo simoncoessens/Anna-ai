@@ -46,7 +46,7 @@ export default function Question1() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         user_token: localStorage.getItem("user_token"),
-        question_id: 2,
+        question_id: 9,
         prompt: message,
       }),
     })
@@ -69,7 +69,7 @@ export default function Question1() {
   }, [history]);
 
   const handleButtonClick = () => {
-    router.push("/question3");
+    router.push("/risk-asses");
   };
 
   return (
@@ -88,23 +88,25 @@ export default function Question1() {
           <div className="flex-1 flex flex-col justify-center items-center p-8">
             <div className="max-w-xl w-full">
               <h2 className="text-4xl font-bold mb-4">
-                Are you under the geographical scope of the AIA?
+                Is your AI system designed to interact directly with people, or
+                does it generate synthetic audio, images, videos, or text
+                content?
               </h2>
               <p className="text-2xl text-gray-700 mb-4">
-                Please provide more information to ANNA about where you are
-                located and where your activities are based. Your answers will
-                help determine whether your activities fall within the
-                geographical scope of the AI Act, even if you're not physically
-                established in the EU.
+                Some AI systems, regardless of whether they are classified as
+                high-risk, may still present transparency issues that need to be
+                addressed. For example, if your AI system generates synthetic
+                videos or text content, you may be required to ensure that the
+                outputs are clearly marked as artificially generated. Similarly,
+                if your system interacts directly with people, it may need to
+                inform users that they are interacting with an AI, unless this
+                is obvious.
                 <br />
                 <br />
-                This will ensure proper guidance on the obligations you may
-                have. For example, you may be excluded if your AI system is used
-                exclusively for military purposes, or if it is deployed by a
-                third-country public authority for international cooperation
-                with the Union. Alternatively, if the AI system is part of
-                research and development activities not yet placed on the
-                market, you may also be exempt from the regulation.
+                Transparency measures can be critical for building trust and
+                compliance. If you're unsure about your system's transparency
+                requirements, ANNA can help guide you through the necessary
+                steps to address them.
               </p>
             </div>
           </div>

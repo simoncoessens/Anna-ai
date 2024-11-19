@@ -24,6 +24,18 @@ export default function Question1() {
 
   const handleClick = () => {
     if (message === "") return;
+
+    let userToken = localStorage.getItem("user_token");
+    if (!userToken) {
+      // Generate a simple unique identifier (UUID)
+      userToken =
+        "user-" +
+        Date.now() +
+        "-" +
+        Math.random().toString(36).substring(2, 15);
+      localStorage.setItem("user_token", userToken);
+    }
+
     setHistory((oldHistory) => [
       ...oldHistory,
       { role: "user", content: message },
@@ -33,7 +45,11 @@ export default function Question1() {
     fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: message, history: history }),
+      body: JSON.stringify({
+        user_token: localStorage.getItem("user_token"),
+        question_id: 1,
+        prompt: message,
+      }),
     })
       .then(async (res) => {
         const r = await res.json();
@@ -54,7 +70,7 @@ export default function Question1() {
   }, [history]);
 
   const handleButtonClick = () => {
-    router.push("/risk-asses");
+    router.push("/question2");
   };
 
   return (
